@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page import="article_manager.Article" %>
-<%@ page import="article_manager.ArticleManager" %>
+<%@ page import="article_manager.ArticleDao" %>
 
 <%
 
@@ -10,9 +10,9 @@
 	String body = request.getParameter("body");
 	
 	
-	ArticleManager am = new ArticleManager();
+	ArticleDao dao = new ArticleDao();
 	
-	am.updateArticle(id, title, body);
+	dao.updateArticle(id, title, body);
 	
 	RequestDispatcher dis = request.getRequestDispatcher("list.jsp");
 	dis.forward(request, response);

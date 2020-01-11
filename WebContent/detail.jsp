@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ page import="article_manager.ArticleManager" %>
+<%@ page import="java.sql.*" %>
+<%@ page import="java.util.*" %>
+<%@ page import="article_manager.ArticleDao" %>
 <%@ page import="article_manager.Article" %>
 <!DOCTYPE html>
 <html>
@@ -9,13 +11,13 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+<%
 	
-	<%
-		int id = Integer.parseInt(request.getParameter("id"));
-		ArticleManager am = new ArticleManager();
-		Article a = am.getArticleById(id);
-	%>
+	int id = Integer.parseInt(request.getParameter("id"));
+
+	ArticleDao dao = new ArticleDao();
+	Article a = dao.getArticleById(id);
+%>
 	<form action="doUpdate.jsp">
 	<table border="1">
 		<tr>

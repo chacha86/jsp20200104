@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ page import="article_manager.ArticleManager" %>
+<%@ page import="article_manager.ArticleDao" %>
 <%@ page import="article_manager.Article" %>
 <%
 
@@ -17,8 +17,8 @@
 	a.setBody(body);
 	a.setNick(nick);
 	
-	ArticleManager am = new ArticleManager();
-	am.insertArticle(a); // 게시물 관리자의 게시물 추가 기능을 이용해 만든 게시물을 저장한다.
+	ArticleDao dao = new ArticleDao();
+	dao.insertArticle(a); // 게시물 관리자의 게시물 추가 기능을 이용해 만든 게시물을 저장한다.
 	
 	
 	 // 저장 후에는 list를 다시 뿌려줘야 하는데 이미 list.jsp에서 그 일을 하고 있으므로 여기서 새로 만들지 않고 list.jsp에게 나머지 리스팅 작업을 위임한다.

@@ -1,8 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ page import="article_manager.ArticleManager" %>
+<%@ page import="java.sql.*"%>
+<%@ page import="article_manager.ArticleDao" %>
 <%@ page import="article_manager.Article" %>
-<%@ page import="java.util.ArrayList" %>
+<%@ page import="java.util.List" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,9 +13,8 @@
 <body>
 
 <%
-	ArticleManager am = new ArticleManager();
-	am.init();
-	ArrayList<Article> list = am.getAllArticles();
+	ArticleDao dao = new ArticleDao();
+	List<Article> articles = dao.getAllArticle();
 %>
 
 <h2>게시판</h2>
@@ -34,12 +34,12 @@
             작성일
         </td>
     </tr>
-    <% for(int i = 0; i < list.size(); i++) { %>
+    <% for(int i = 0; i < articles.size(); i++) { %>
      <tr>
-     	 <td><%= list.get(i).getId() %></td>
-         <td><a href="detail.jsp?id=<%= list.get(i).getId() %>"><%= list.get(i).getTitle() %></a></td>
-         <td><%= list.get(i).getNick() %></td>
-         <td><%= list.get(i).getRegDate() %></td>
+     	 <td><%= articles.get(i).getId() %></td>
+         <td><a href="detail.jsp?id=<%= articles.get(i).getId() %>"><%= articles.get(i).getTitle() %></a></td>
+         <td><%= articles.get(i).getNick() %></td>
+         <td><%= articles.get(i).getRegDate() %></td>
     </tr>
     <%}%>
 </table>
