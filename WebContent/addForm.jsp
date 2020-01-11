@@ -1,20 +1,20 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
+<meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
 <body>
 
-	<!-- form ÅÂ±×´Â uri Á¦ÀÛÀÚÀÌ´Ù. action¿¡ ÀûÈù ¸ñÀûÁö·Î nameÀ» Å°·Î ÇÏ¿© ÆÄ¶ó¹ÌÅÍ¸¦ ¸¸µé¾îÁØ´Ù. -->
-	<!-- ¾Æ·¡ formÀº ÃÖÁ¾ÀûÀ¸·Î doAdd.jsp?title=??&body=??&nick=?? (¿©±â¼­ ??´Â »ç¿ëÀÚ°¡ ÅØ½ºÆ®Ã¢¿¡ ÀÔ·ÂÇÑ °ªÀÌ´Ù.) -->
+	<!-- form íƒœê·¸ëŠ” uri ì œì‘ìì´ë‹¤. actionì— ì íŒ ëª©ì ì§€ë¡œ nameì„ í‚¤ë¡œ í•˜ì—¬ íŒŒë¼ë¯¸í„°ë¥¼ ë§Œë“¤ì–´ì¤€ë‹¤. -->
+	<!-- ì•„ë˜ formì€ ìµœì¢…ì ìœ¼ë¡œ doAdd.jsp?title=??&body=??&nick=?? (ì—¬ê¸°ì„œ ??ëŠ” ì‚¬ìš©ìê°€ í…ìŠ¤íŠ¸ì°½ì— ì…ë ¥í•œ ê°’ì´ë‹¤.) -->
 	<form action="doAdd.jsp">
-		<input type="text" name="title" placeHolder="Á¦¸ñÀ» ÀÔ·ÂÇØÁÖ¼¼¿ä."/>
-		<input type="text" name="body" placeHolder="³»¿ëÀ» ÀÔ·ÂÇØÁÖ¼¼¿ä."/>
-		<input type="text" name="nick" placeHolder="ÀÛ¼ºÀÚ¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä."/>
-		<input type="submit" value="º¸³»±â" />
+		<input type="text" name="title" placeHolder="ì œëª©ì„ ì…ë ¥í•´ì£¼ì„¸ìš”."/>
+		<input type="text" name="body" placeHolder="ë‚´ìš©ì„ ì…ë ¥í•´ì£¼ì„¸ìš”."/>
+		<input type="text" name="nick" placeHolder="ì‘ì„±ìë¥¼ ì…ë ¥í•´ì£¼ì„¸ìš”."/>
+		<input type="submit" value="ë³´ë‚´ê¸°" />
 	</form>
 
 </body>

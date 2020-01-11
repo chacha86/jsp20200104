@@ -37,13 +37,14 @@
     <% for(int i = 0; i < list.size(); i++) { %>
      <tr>
      	 <td><%= list.get(i).getId() %></td>
-         <td><%= list.get(i).getTitle() %></td>
+         <td><a href="detail.jsp?id=<%= list.get(i).getId() %>"><%= list.get(i).getTitle() %></a></td>
          <td><%= list.get(i).getNick() %></td>
          <td><%= list.get(i).getRegDate() %></td>
     </tr>
     <%}%>
 </table>
 <a href="addForm.jsp">게시물 등록</a>
+<a href="init.jsp">초기화 하기</a>
 
 </body>
 </html>

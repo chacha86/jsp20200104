@@ -1,12 +1,12 @@
 package article_manager;
 
-// °Ô½Ã¹° µ¥ÀÌÅÍ¸¦ ÀúÀåÇÏ°í ¿î¹İÇÏ±â À§ÇÑ µ¥ÀÌÅÍ°´Ã¼
+// ê²Œì‹œë¬¼ ë°ì´í„°ë¥¼ ì €ì¥í•˜ê³  ìš´ë°˜í•˜ê¸° ìœ„í•œ ë°ì´í„°ê°ì²´
 public class Article {
-	int id;
-	String title;
-	String body;
-	String nick;
-	String regDate;
+	private int id;
+	private String title;
+	private String body;
+	private String nick;
+	private String regDate;
 	public int getId() {
 		return id;
 	}

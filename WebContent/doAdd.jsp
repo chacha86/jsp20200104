@@ -1,28 +1,28 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <%@ page import="article_manager.ArticleManager" %>
 <%@ page import="article_manager.Article" %>
 <%
 
-	// addForm.jsp ¿¡¼­ ³Ñ±ä ÆÄ¶ó¹ÌÅÍ µ¥ÀÌÅÍ¸¦ ÀúÀåÇÑ´Ù.
+	// addForm.jsp ì—ì„œ ë„˜ê¸´ íŒŒë¼ë¯¸í„° ë°ì´í„°ë¥¼ ì €ìž¥í•œë‹¤.
 	String title = request.getParameter("title");
 	String body = request.getParameter("body");
  	String nick = request.getParameter("nick");
 	
- 	// »õ·Î¿î °Ô½Ã¹°À» ¸¸µé±â À§ÇØ Article °´Ã¼¸¦ ¸¸µç´Ù.
+ 	// ìƒˆë¡œìš´ ê²Œì‹œë¬¼ì„ ë§Œë“¤ê¸° ìœ„í•´ Article ê°ì²´ë¥¼ ë§Œë“ ë‹¤.
 	Article a = new Article();
 	
- 	// À§¿¡¼­ ÆÄ¶ó¹ÌÅÍ·Î ¹ÞÀº °Ô½Ã¹° Á¤º¸¸¦ ¼ÂÆÃÇØÁØ´Ù.
+ 	// ìœ„ì—ì„œ íŒŒë¼ë¯¸í„°ë¡œ ë°›ì€ ê²Œì‹œë¬¼ ì •ë³´ë¥¼ ì…‹íŒ…í•´ì¤€ë‹¤.
 	a.setTitle(title);
 	a.setBody(body);
 	a.setNick(nick);
 	
 	ArticleManager am = new ArticleManager();
-	am.insertArticle(a); // °Ô½Ã¹° °ü¸®ÀÚÀÇ °Ô½Ã¹° Ãß°¡ ±â´ÉÀ» ÀÌ¿ëÇØ ¸¸µç °Ô½Ã¹°À» ÀúÀåÇÑ´Ù.
+	am.insertArticle(a); // ê²Œì‹œë¬¼ ê´€ë¦¬ìžì˜ ê²Œì‹œë¬¼ ì¶”ê°€ ê¸°ëŠ¥ì„ ì´ìš©í•´ ë§Œë“  ê²Œì‹œë¬¼ì„ ì €ìž¥í•œë‹¤.
 	
 	
-	 // ÀúÀå ÈÄ¿¡´Â list¸¦ ´Ù½Ã »Ñ·ÁÁà¾ß ÇÏ´Âµ¥ ÀÌ¹Ì list.jsp¿¡¼­ ±× ÀÏÀ» ÇÏ°í ÀÖÀ¸¹Ç·Î ¿©±â¼­ »õ·Î ¸¸µéÁö ¾Ê°í list.jsp¿¡°Ô ³ª¸ÓÁö ¸®½ºÆÃ ÀÛ¾÷À» À§ÀÓÇÑ´Ù.
-	 // ÀÌ¸¦ À§ÇØ¼± ¿äÃ» Á¤º¸¿Í ÀÀ´ä Á¤º¸°¡ »ç¶óÁ®¼± ¾ÈµÇ¹Ç·Î ±âÁ¸ÀÇ Á¤º¸¸¦ ¸ðµÎ Àü´ÞÇÑ´Ù.(forward ¸Þ¼­µå·Î ¿äÃ», ÀÀ´ä °´Ã¼¸¦ Àü´ÞÇÏ°í ÀÖ´Ù.)
+	 // ì €ìž¥ í›„ì—ëŠ” listë¥¼ ë‹¤ì‹œ ë¿Œë ¤ì¤˜ì•¼ í•˜ëŠ”ë° ì´ë¯¸ list.jspì—ì„œ ê·¸ ì¼ì„ í•˜ê³  ìžˆìœ¼ë¯€ë¡œ ì—¬ê¸°ì„œ ìƒˆë¡œ ë§Œë“¤ì§€ ì•Šê³  list.jspì—ê²Œ ë‚˜ë¨¸ì§€ ë¦¬ìŠ¤íŒ… ìž‘ì—…ì„ ìœ„ìž„í•œë‹¤.
+	 // ì´ë¥¼ ìœ„í•´ì„  ìš”ì²­ ì •ë³´ì™€ ì‘ë‹µ ì •ë³´ê°€ ì‚¬ë¼ì ¸ì„  ì•ˆë˜ë¯€ë¡œ ê¸°ì¡´ì˜ ì •ë³´ë¥¼ ëª¨ë‘ ì „ë‹¬í•œë‹¤.(forward ë©”ì„œë“œë¡œ ìš”ì²­, ì‘ë‹µ ê°ì²´ë¥¼ ì „ë‹¬í•˜ê³  ìžˆë‹¤.)
 	RequestDispatcher dispatcher = request.getRequestDispatcher("list.jsp");
 	dispatcher.forward(request, response);
 	

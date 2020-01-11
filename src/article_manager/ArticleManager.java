@@ -3,93 +3,93 @@ package article_manager;
 import java.util.ArrayList;
 
 /**
- * °Ô½Ã¹° °ü¸®¸¦ À§ÇÑ °´Ã¼.
- * °Ô½Ã¹°À» Á¶È¸ µîÀÇ ±â´ÉÀ» Á¦°øÇÒ °Í.
+ * ê²Œì‹œë¬¼ ê´€ë¦¬ë¥¼ ìœ„í•œ ê°ì²´.
+ * ê²Œì‹œë¬¼ì„ ì¡°íšŒ ë“±ì˜ ê¸°ëŠ¥ì„ ì œê³µí•  ê²ƒ.
  */
 public class ArticleManager {
 	
-	//1. °Ô½Ã¹°À» ÀúÀåÇÒ ÀúÀå¼Ò ¸¸µé±â.(ArrayList) °Ô½Ã¹°ÀÇ ÀúÀåÀ» ´ã´ç.  
-	static ArrayList<Article> aList = new ArrayList<Article>(); //¸ğµç Article_manager °´Ã¼°¡ °øÀ¯ÇÒ ¼ö ÀÖµµ·Ï staticÀ¸·Î ¼±¾ğ.
-	static int lastId; // °¡Àå ¸¶Áö¸· °Ô½Ã¹°ÀÇ ¾ÆÀÌµğ¸¦ ±â¾ïÇÔÀ¸·Î½á »õ·Î¿î °Ô½Ã¹°À» Ãß°¡ÇÒ ¶§ ´ÙÀ½ ¾ÆÀÌµğ ¹øÈ£¸¦ ºÎ¿©ÇÒ ¼ö ÀÖ´Ù.
+	//1. ê²Œì‹œë¬¼ì„ ì €ì¥í•  ì €ì¥ì†Œ ë§Œë“¤ê¸°.(ArrayList) ê²Œì‹œë¬¼ì˜ ì €ì¥ì„ ë‹´ë‹¹.  
+	public static ArrayList<Article> aList = new ArrayList<Article>(); //ëª¨ë“  Article_manager ê°ì²´ê°€ ê³µìœ í•  ìˆ˜ ìˆë„ë¡ staticìœ¼ë¡œ ì„ ì–¸.
+	static int lastId; // ê°€ì¥ ë§ˆì§€ë§‰ ê²Œì‹œë¬¼ì˜ ì•„ì´ë””ë¥¼ ê¸°ì–µí•¨ìœ¼ë¡œì¨ ìƒˆë¡œìš´ ê²Œì‹œë¬¼ì„ ì¶”ê°€í•  ë•Œ ë‹¤ìŒ ì•„ì´ë”” ë²ˆí˜¸ë¥¼ ë¶€ì—¬í•  ìˆ˜ ìˆë‹¤.
 	
-	//2. Å×½ºÆ® °Ô½Ã¹° 5°³ ¸¸µé±â À§ÇÑ ÃÊ±âÈ­ ¸Ş¼­µå
+	//2. í…ŒìŠ¤íŠ¸ ê²Œì‹œë¬¼ 5ê°œ ë§Œë“¤ê¸° ìœ„í•œ ì´ˆê¸°í™” ë©”ì„œë“œ
 	public void init() {
 		
-		// aList°¡ ºñ¾îÀÖÀ» ¶§¸¸ ÃÊ±âÈ­ µ¥ÀÌÅÍ¸¦ ¸¸µé°í ±× ¿Ü¿¡´Â ¸¸µéÁö ¾Ê´Â´Ù.
+		// aListê°€ ë¹„ì–´ìˆì„ ë•Œë§Œ ì´ˆê¸°í™” ë°ì´í„°ë¥¼ ë§Œë“¤ê³  ê·¸ ì™¸ì—ëŠ” ë§Œë“¤ì§€ ì•ŠëŠ”ë‹¤.
 		if(aList.size() == 0) {
 			
-			// Article °´Ã¼¸¦ ÀÌ¿ëÇØ °¢°¢ °Ô½Ã¹°À» 5°³ ¸¸µç´Ù.
+			// Article ê°ì²´ë¥¼ ì´ìš©í•´ ê°ê° ê²Œì‹œë¬¼ì„ 5ê°œ ë§Œë“ ë‹¤.
 			Article a1 = new Article();
 			
 			a1.setId(1);
-			a1.setTitle("Á¦¸ñ1");
-			a1.setBody("³»¿ë1");
-			a1.setNick("ÀÛ¼ºÀÚ1");
+			a1.setTitle("ì œëª©1");
+			a1.setBody("ë‚´ìš©1");
+			a1.setNick("ì‘ì„±ì1");
 			a1.setRegDate("20190817");
 			
 			Article a2 = new Article();
 			
 			a2.setId(2);
-			a2.setTitle("Á¦¸ñ2");
-			a2.setBody("³»¿ë2");
-			a2.setNick("ÀÛ¼ºÀÚ2");
+			a2.setTitle("ì œëª©2");
+			a2.setBody("ë‚´ìš©2");
+			a2.setNick("ì‘ì„±ì2");
 			a2.setRegDate("20190817");
 
 			Article a3 = new Article();
 			
 			a3.setId(3);
-			a3.setTitle("Á¦¸ñ3");
-			a3.setBody("³»¿ë3");
-			a3.setNick("ÀÛ¼ºÀÚ3");
+			a3.setTitle("ì œëª©3");
+			a3.setBody("ë‚´ìš©3");
+			a3.setNick("ì‘ì„±ì3");
 			a3.setRegDate("20190817");
 
 			Article a4 = new Article();
 			
 			a4.setId(4);
-			a4.setTitle("Á¦¸ñ4");
-			a4.setBody("³»¿ë4");
-			a4.setNick("ÀÛ¼ºÀÚ4");
+			a4.setTitle("ì œëª©4");
+			a4.setBody("ë‚´ìš©4");
+			a4.setNick("ì‘ì„±ì4");
 			a4.setRegDate("20190817");
 
 			Article a5 = new Article();
 			
 			a5.setId(5);
-			a5.setTitle("Á¦¸ñ5");
-			a5.setBody("³»¿ë5");
-			a5.setNick("ÀÛ¼ºÀÚ5");
+			a5.setTitle("ì œëª©5");
+			a5.setBody("ë‚´ìš©5");
+			a5.setNick("ì‘ì„±ì5");
 			a5.setRegDate("20190817");
 			
-			// ¸¸µé¾îÁø 5°³ÀÇ °Ô½Ã¹°À» aList ÀúÀå¼Ò¿¡ ´ã´Â´Ù.
+			// ë§Œë“¤ì–´ì§„ 5ê°œì˜ ê²Œì‹œë¬¼ì„ aList ì €ì¥ì†Œì— ë‹´ëŠ”ë‹¤.
 			aList.add(a1);
 			aList.add(a2);
 			aList.add(a3);
 			aList.add(a4);
 			aList.add(a5);
 			
-			lastId = 5; // 5°³¸¦  ÀúÀåÇßÀ¸¹Ç·Î ¸¶Áö¸· ¾ÆÀÌµğ´Â 5ÀÌ´Ù.
+			lastId = 5; // 5ê°œë¥¼  ì €ì¥í–ˆìœ¼ë¯€ë¡œ ë§ˆì§€ë§‰ ì•„ì´ë””ëŠ” 5ì´ë‹¤.
 
 		}
 	}
 	
-	//3. Á¶È¸ ¸Ş¼­µå¸¦ ¸¸µé¾î ÀúÀå¼Ò¿¡ ÀÖ´Â °Ô½Ã¹° °¡Á®¿À±â
+	//3. ì¡°íšŒ ë©”ì„œë“œë¥¼ ë§Œë“¤ì–´ ì €ì¥ì†Œì— ìˆëŠ” ê²Œì‹œë¬¼ ê°€ì ¸ì˜¤ê¸°
 	public ArrayList<Article> getAllArticles() {
 		return this.aList;
 	}
 	
-	//4. ¹øÈ£·Î Æ¯Á¤ °Ô½Ã¹° index Ã£±â
+	//4. ë²ˆí˜¸ë¡œ íŠ¹ì • ê²Œì‹œë¬¼ index ì°¾ê¸°
 	public int getIndexById(int id) {
-		int i = -1;
-		for(Article a : aList) {
-			i++;
-			if(a.getId() == id ) {
-				return i;
+		int idx = -1;
+		for(int i = 0; i < aList.size(); i++) {
+			idx++;
+			if(aList.get(i).getId() == id ) {
+				return idx;
 			}
 		}
 		
-		return i;
+		return idx;
 	}
 	
-	// 5. ¾ÆÀÌµğ·Î Æ¯Á¤ °Ô½Ã¹° Ã£±â
+	// 5. ì•„ì´ë””ë¡œ íŠ¹ì • ê²Œì‹œë¬¼ ì°¾ê¸°
 	public Article getArticleById(int id) {
 		
 		Article a = null;
@@ -104,7 +104,7 @@ public class ArticleManager {
 		
 		
 	}
-	//6. °Ô½Ã¹° »ğÀÔÇÏ±â
+	//6. ê²Œì‹œë¬¼ ì‚½ì…í•˜ê¸°
 	public void insertArticle(Article a) {
 		a.setId(lastId+1);
 		a.setRegDate("20200111");
@@ -112,12 +112,23 @@ public class ArticleManager {
 		lastId++;
 	}
 	
-	//7. Æ¯Á¤ °Ô½Ã¹° ¼öÁ¤ÇÏ±â
+	//7. íŠ¹ì • ê²Œì‹œë¬¼ ìˆ˜ì •í•˜ê¸°
 	public void updateArticle(int id, String title, String body) {
 		int i = getIndexById(id);
 		
-		aList.get(i).setBody(body);
-		aList.get(i).setTitle(title);	
+		if(i > -1) {
+			aList.get(i).setBody(body);
+			aList.get(i).setTitle(title);
+		}
+	}
+	
+	//8. íŠ¹ì • ê²Œì‹œë¬¼ ì‚­ì œí•˜ê¸°
+	public void deleteArticleById(int id) {
+		int i = getIndexById(id);
+		
+		if(i > -1) {
+			aList.remove(i);
+		}
 	}
 	
 }
