@@ -1,7 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ page import="java.sql.*"%>
-<%@ page import="article_manager.ArticleDao" %>
 <%@ page import="article_manager.Article" %>
 <%@ page import="java.util.List" %>
 <!DOCTYPE html>
@@ -13,8 +11,7 @@
 <body>
 
 <%
-	ArticleDao dao = new ArticleDao();
-	List<Article> articles = dao.getAllArticle();
+	List<Article> articles = (List<Article>)request.getAttribute("articles");
 %>
 
 <h2>게시판</h2>
@@ -37,14 +34,13 @@
     <% for(int i = 0; i < articles.size(); i++) { %>
      <tr>
      	 <td><%= articles.get(i).getId() %></td>
-         <td><a href="detail.jsp?id=<%= articles.get(i).getId() %>"><%= articles.get(i).getTitle() %></a></td>
+         <td><a href="detail.do?id=<%= articles.get(i).getId() %>"><%= articles.get(i).getTitle() %></a></td>
          <td><%= articles.get(i).getNick() %></td>
          <td><%= articles.get(i).getRegDate() %></td>
     </tr>
     <%}%>
 </table>
-<a href="addForm.jsp">게시물 등록</a>
-<a href="init.jsp">초기화 하기</a>
+<a href="goAddForm.do">게시물 등록</a>
 
 </body>
 </html>

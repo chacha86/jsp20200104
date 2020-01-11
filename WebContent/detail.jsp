@@ -1,8 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ page import="java.sql.*" %>
 <%@ page import="java.util.*" %>
-<%@ page import="article_manager.ArticleDao" %>
 <%@ page import="article_manager.Article" %>
 <!DOCTYPE html>
 <html>
@@ -12,13 +10,9 @@
 </head>
 <body>
 <%
-	
-	int id = Integer.parseInt(request.getParameter("id"));
-
-	ArticleDao dao = new ArticleDao();
-	Article a = dao.getArticleById(id);
+	Article a = (Article)request.getAttribute("article");
 %>
-	<form action="doUpdate.jsp">
+	<form action="update.do">
 	<table border="1">
 		<tr>
 			<td>
@@ -58,6 +52,6 @@
 	</table>
 	<input type="submit" value="수정" />
 	</form>
-	<a href="doDelete.jsp?id=<%= a.getId()%>">삭제</a>
+	<a href="delete.do?id=<%= a.getId()%>">삭제</a>
 </body>
 </html>
